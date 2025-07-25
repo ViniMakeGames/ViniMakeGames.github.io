@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Seu Nome - Portfólio de Programador de Jogos</title>
+  <title>Your Name - Game Programmer Portfolio</title>
   <style>
-    /* Reset e estilo base */
+    /* Reset and Base Styles */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body { font-family: Arial, sans-serif; line-height: 1.6; }
@@ -15,89 +15,73 @@
     nav ul { list-style: none; display: flex; gap: 1rem; }
     nav a { color: #333; text-decoration: none; transition: color 0.3s; }
     nav a:hover { color: #007bff; }
+
     section { padding: 100px 20px; max-width: 1200px; margin: auto; }
     #home { display: flex; align-items: center; justify-content: center; height: 100vh; background: #f5f5f5; }
     #home h1 { font-size: 3rem; }
+
     /* Card Styles */
     .card { background: #fff; border: 1px solid #eaeaea; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
     .thumbnail { width: 100%; height: 200px; object-fit: cover; background: #ddd; }
     .card-content { padding: 1rem; }
     .card-content h3 { margin-bottom: 0.5rem; }
-    .card-content p { font-size: 0.9rem; color: #666; }
+    .card-content p { font-size: 0.9rem; color: #666; margin: 0.25rem 0; }
     .card-content a { display: inline-block; margin-top: 0.5rem; color: #007bff; text-decoration: none; }
+
     /* Slider Styles */
     .carousel { position: relative; overflow: hidden; }
     .slides { display: flex; transition: transform 0.5s ease-in-out; }
     .slide { min-width: 33.333%; box-sizing: border-box; padding: 0 10px; }
-    .carousel-button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0,0,0,0.5);
-      border: none;
-      color: #fff;
-      padding: 0.5rem;
-      cursor: pointer;
-      border-radius: 50%;
-      z-index: 10;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s;
-    }
-    .carousel:hover .carousel-button {
-      opacity: 1;
-      pointer-events: auto;
-    }
+    .carousel-button { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); border: none; color: #fff; padding: 0.5rem; cursor: pointer; border-radius: 50%; z-index: 10; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+    .carousel:hover .carousel-button { opacity: 1; pointer-events: auto; }
     .carousel-button.prev { left: 10px; }
     .carousel-button.next { right: 10px; }
-    /* Sobre & Social */
+
+    /* About & Social */
     #about { display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; background: #fafafa; }
     .avatar { width: 150px; height: 150px; border-radius: 50%; background: #ddd; }
     .bio { flex: 1; }
     #contact { text-align: center; background: #f9f9f9; }
-    .social-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; padding: 2rem 0; }
-    .social-button { padding: 0.75rem 1.5rem; background: #007bff; color: #fff; text-decoration: none; border-radius: 4px; transition: background 0.3s; }
-    .social-button:hover { background: #0056b3; }
+    .social-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; padding: 2.5rem 0; }
+    .social-button { display: inline-block; }
+    .social-icon { width: 64px; height: 64px; }
     footer { text-align: center; padding: 1rem 0; background: #f5f5f5; margin-top: 2rem; }
   </style>
 </head>
 <body>
   <header>
     <nav>
-      <div class="logo">Seu Nome</div>
+      <div class="logo">Your Name</div>
       <ul>
         <li><a href="#home">Home</a></li>
-        <li><a href="#games">Jogos</a></li>
+        <li><a href="#games">Games</a></li>
         <li><a href="#models">3D Models</a></li>
         <li><a href="#techart">Tech Art</a></li>
-        <li><a href="#about">Sobre</a></li>
-        <li><a href="#contact">Contato</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
   <main>
     <section id="home">
-      <h1>Olá, sou [Seu Nome]</h1>
+      <h1>Hello, I'm [Your Name]</h1>
     </section>
-    <!-- Jogos Carousel -->
     <section id="games">
-      <h2>Jogos</h2>
+      <h2>Games</h2>
       <div class="carousel" id="games-carousel">
         <button class="carousel-button prev">&#10094;</button>
         <div class="slides"></div>
         <button class="carousel-button next">&#10095;</button>
       </div>
     </section>
-    <!-- Modelos 3D Carousel -->
     <section id="models">
-      <h2>Modelos 3D</h2>
+      <h2>3D Models</h2>
       <div class="carousel" id="models-carousel">
         <button class="carousel-button prev">&#10094;</button>
         <div class="slides"></div>
         <button class="carousel-button next">&#10095;</button>
       </div>
     </section>
-    <!-- Tech Art Carousel -->
     <section id="techart">
       <h2>Tech Art</h2>
       <div class="carousel" id="techart-carousel">
@@ -106,27 +90,26 @@
         <button class="carousel-button next">&#10095;</button>
       </div>
     </section>
-    <!-- Sobre e Contato -->
     <section id="about">
       <div class="avatar"></div>
       <div class="bio">
-        <p>Sou [Seu Nome], programador de jogos com experiência em C#, Unreal Engine e Blender. Apaixonado por criar experiências interativas e visuais impressionantes.</p>
+        <p>I'm [Your Name], a game programmer experienced in C#, Unreal Engine, and Blender. Passionate about crafting interactive experiences and stunning visuals.</p>
       </div>
     </section>
     <section id="contact">
-      <h2>Contato</h2>
+      <h2>Contact</h2>
       <div class="social-buttons">
-        <a class="social-button" href="#" target="_blank">Instagram</a>
-        <a class="social-button" href="#" target="_blank">LinkedIn</a>
-        <a class="social-button" href="#" target="_blank">YouTube</a>
-        <a class="social-button" href="#" target="_blank">Sketchfab</a>
-        <a class="social-button" href="#" target="_blank">OpenGameArt</a>
-        <a class="social-button" href="#" target="_blank">GitHub</a>
+        <a class="social-button" href="#"><img src="icons/instagram.png" alt="Instagram" class="social-icon"></a>
+        <a class="social-button" href="#"><img src="icons/linkedin.png" alt="LinkedIn" class="social-icon"></a>
+        <a class="social-button" href="#"><img src="icons/youtube.png" alt="YouTube" class="social-icon"></a>
+        <a class="social-button" href="#"><img src="icons/sketchfab.png" alt="Sketchfab" class="social-icon"></a>
+        <a class="social-button" href="#"><img src="icons/opengameart.png" alt="OpenGameArt" class="social-icon"></a>
+        <a class="social-button" href="#"><img src="icons/github.png" alt="GitHub" class="social-icon"></a>
       </div>
     </section>
   </main>
   <footer>
-    © 2025 Seu Nome. Todos os direitos reservados.
+    © 2025 Your Name. All rights reserved.
   </footer>
   <script>
     // Smooth scroll fallback
@@ -136,75 +119,130 @@
         document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
       });
     });
-    // Dados dinâmicos
+
+    // Dynamic data arrays
     const gamesData = [
-      { name: 'Jogo 1', link: '#', img: 'images/jogo1.jpg', engine: 'Unity' },
-      { name: 'Jogo 2', link: '#', img: 'images/jogo2.jpg', engine: 'Unreal Engine' },
-      { name: 'Jogo 3', link: '#', img: 'images/jogo3.jpg', engine: 'Godot' },
-      { name: 'Jogo 4', link: '#', img: 'images/jogo4.jpg', engine: 'Unity' }
+      { name: 'Rune Legacy Idle', link: 'https://store.steampowered.com/app/3098820/Rune_Legacy_Idle/', img: 'screenshots/runelegacy_banner.jpg', gif: 'screenshots/runelegacy_banner.gif', engine: 'Unity', platforms: 'Steam, Android, iOS' },
+      { name: 'Dananeer', link: 'https://play.google.com/store/apps/details?id=com.dananeer.dananeerpro&hl=pt_BR', img: 'screenshots/dananeer_banner.png', gif: 'screenshots/dananeer_banner.gif', engine: 'Unity', platforms: 'Android, iOS' },
+      { name: 'Slime Dungeon', link: 'https://palloma.itch.io/slime-dungeon', img: 'screenshots/slimedungeon_banner.png', gif: 'screenshots/slimedungeon_banner.gif', engine: 'Unity', platforms: 'itch.io' },
+      { name: 'Game 4', link: '#', img: 'images/game4.jpg', gif: 'images/game4.gif', engine: 'Unity' }
     ];
+
     const modelsData = [
-      { name: 'Modelo 1', link: '#', img: 'images/modelo1.jpg' },
-      { name: 'Modelo 2', link: '#', img: 'images/modelo2.jpg' },
-      { name: 'Modelo 3', link: '#', img: 'images/modelo3.jpg' }
+      {
+        name: 'Cult of the Lamb',
+        link: 'https://sketchfab.com/3d-models/cult-of-the-lamb-ea3e0f5371c741d088499b2c3c00029a',
+        embedHtml: `
+          <div class="sketchfab-embed-wrapper">
+            <iframe title="Cult of the Lamb" frameborder="0" allowfullscreen mozallowfullscreen webkitallowfullscreen allow="autoplay; fullscreen; xr-spatial-tracking" src="https://sketchfab.com/models/ea3e0f5371c741d088499b2c3c00029a/embed"></iframe>
+            <p style="font-size:13px; font-weight:normal; margin:5px; color:#4A4A4A;">
+              <a href="https://sketchfab.com/3d-models/cult-of-the-lamb-ea3e0f5371c741d088499b2c3c00029a" target="_blank" rel="nofollow" style="font-weight:bold; color:#1CAAD9;">Cult of the Lamb</a>
+              by
+              <a href="https://sketchfab.com/vinimakegames" target="_blank" rel="nofollow" style="font-weight:bold; color:#1CAAD9;">vinimakegames</a>
+              on
+              <a href="https://sketchfab.com" target="_blank" rel="nofollow" style="font-weight:bold; color:#1CAAD9;">Sketchfab</a>
+            </p>
+          </div>
+        `
+      },
+      {
+        name: 'Shade',
+        link: 'https://sketchfab.com/3d-models/shade-8d31bfb79a9e41fb886dbc8961cbc1a0',
+        embedHtml: `
+          <div class="sketchfab-embed-wrapper">
+            <iframe title="Shade" frameborder="0" allowfullscreen mozallowfullscreen webkitallowfullscreen allow="autoplay; fullscreen; xr-spatial-tracking" src="https://sketchfab.com/models/8d31bfb79a9e41fb886dbc8961cbc1a0/embed"></iframe>
+            <p style="font-size:13px; font-weight:normal; margin:5px; color:#4A4A4A;">
+              <a href="https://sketchfab.com/3d-models/shade-8d31bfb79a9e41fb886dbc8961cbc1a0" target="_blank" rel="nofollow" style="font-weight:bold; color:#1CAAD9;">Shade</a>
+              by
+              <a href="https://sketchfab.com/vinimakegames" target="_blank" rel="nofollow" style="font-weight:bold; color:#1CAAD9;">vinimakegames</a>
+              on
+              <a href="https://sketchfab.com" target="_blank" rel="nofollow" style="font-weight:bold; color:#1CAAD9;">Sketchfab</a>
+            </p>
+          </div>
+        `
+      },
+      {
+        name: 'The Legend of Pipi Fanart',
+        link: 'https://sketchfab.com/3d-models/the-legend-of-pipi-fanart-75a131275fb44e7aa21556ee4fe7cee0',
+        embedHtml: `
+          <div class="sketchfab-embed-wrapper">
+            <iframe title="The Legend of Pipi Fanart" frameborder="0" allowfullscreen mozallowfullscreen webkitallowfullscreen allow="autoplay; fullscreen; xr-spatial-tracking" src="https://sketchfab.com/models/75a131275fb44e7aa21556ee4fe7cee0/embed"></iframe>
+            <p style="font-size:13px; font-weight:normal; margin:5px; color:#4A4A4A;">
+              <a href="https://sketchfab.com/3d-models/the-legend-of-pipi-fanart-75a131275fb44e7aa21556ee4fe7cee0?utm_medium=embed&utm_campaign=share-popup&utm_content=75a131275fb44e7aa21556ee4fe7cee0" target="_blank" rel="nofollow" style="font-weight:bold; color:#1CAAD9;">The Legend of Pipi Fanart</a>
+              by
+              <a href="https://sketchfab.com/vinimakegames?utm_medium=embed&utm_campaign=share-popup&utm_content=75a131275fb44e7aa21556ee4fe7cee0" target="_blank" rel="nofollow" style="font-weight:bold; color:#1CAAD9;">vinimakegames</a>
+              on
+              <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=75a131275fb44e7aa21556ee4fe7cee0" target="_blank" rel="nofollow" style="font-weight:bold; color:#1CAAD9;">Sketchfab</a>
+            </p>
+          </div>
+        `
+      },
+      {
+        name: 'Sci-fi Helmet',
+        link: 'https://sketchfab.com/3d-models/sci-fi-helmet',
+        embedHtml: null
+      },
+      {
+        name: 'Wooden Crate',
+        link: 'https://sketchfab.com/3d-models/wooden-crate',
+        embedHtml: null
+      },
+      {
+        name: 'Modular Building',
+        link: 'https://sketchfab.com/3d-models/modular-building',
+        embedHtml: null
+      }
     ];
+
     const techArtData = [
-      { name: 'Shader de Fogo', link: '#', img: 'images/shader-fogo.jpg' },
-      { name: 'VFX Partículas', link: '#', img: 'images/vfx-particulas.jpg' },
-      { name: 'Shader Água', link: '#', img: 'images/shader-agua.jpg' }
+      { name: 'Fire Shader', link: 'videos/fire-shader.mp4', img: 'videos/fire-shader-thumb.jpg', gif: 'videos/fire-shader.gif' },
+      { name: 'Water Shader', link: 'videos/water-shader.mp4', img: 'videos/water-shader-thumb.jpg', gif: 'videos/water-shader.gif' },
+      { name: 'Particle VFX', link: 'videos/particle-vfx.mp4', img: 'videos/particle-vfx-thumb.jpg', gif: 'videos/particle-vfx.gif' }
     ];
-    // Função para popular carrosséis
-    function populateCarousel(carouselId, data) {
-      const slides = document.getElementById(carouselId).querySelector('.slides');
+
+    function populateCarousel(id, data) {
+      const slides = document.getElementById(id).querySelector('.slides');
       data.forEach(item => {
         const slide = document.createElement('div');
         slide.className = 'slide';
-        slide.innerHTML = `
-          <div class="card">
-            <img class="thumbnail" src="${item.img}" alt="${item.name}">
-            <div class="card-content">
-              <h3>${item.name}</h3>
-              ${item.engine ? `<p>Engine: ${item.engine}</p>` : ''}
-              <a href="${item.link}" target="_blank">Ver mais</a>
+        if (id === 'models-carousel' && item.embedHtml) {
+          slide.innerHTML = `<div class="card">${item.embedHtml}</div>`;
+        } else {
+          slide.innerHTML = `
+            <div class="card">
+              <img class="thumbnail" src="${item.img}" alt="${item.name}" data-img="${item.img}" data-gif="${item.gif}">
+              <div class="card-content">
+                <h3>${item.name}</h3>
+                ${item.engine ? `<p>Engine: ${item.engine}</p>` : ''}
+                ${item.platforms ? `<p>Platforms: ${item.platforms}</p>` : ''}
+                <a href="${item.link}" target="_blank">See More</a>
+              </div>
             </div>
-          </div>
-        `;
+          `;
+          const imgElem = slide.querySelector('img.thumbnail');
+          imgElem.addEventListener('mouseenter', () => imgElem.src = imgElem.dataset.gif);
+          imgElem.addEventListener('mouseleave', () => imgElem.src = imgElem.dataset.img);
+        }
         slides.appendChild(slide);
       });
     }
-    // Inicializa carrosséis
-    ['games-carousel', 'models-carousel', 'techart-carousel'].forEach(id => populateCarousel(id,
-      { 'games-carousel': gamesData, 'models-carousel': modelsData, 'techart-carousel': techArtData }[id]
-    ));
-    // Lógica do carrossel
+
+    ['games-carousel', 'models-carousel', 'techart-carousel'].forEach(id => {
+      const dataMap = { 'games-carousel': gamesData, 'models-carousel': modelsData, 'techart-carousel': techArtData };
+      populateCarousel(id, dataMap[id]);
+    });
+
     document.querySelectorAll('.carousel').forEach(carousel => {
       const slides = carousel.querySelector('.slides');
-      const slideCount = slides.children.length;
-      const visibleCount = 3;
-      let currentIndex = 0;
-      let intervalId;
-      function goToSlide(index) {
-        const percent = 100 / visibleCount;
-        slides.style.transform = `translateX(-${index * percent}%)`;
-      }
-      function nextSlide() {
-        currentIndex = (currentIndex + 1) % (slideCount - visibleCount + 1);
-        goToSlide(currentIndex);
-      }
-      function prevSlide() {
-        currentIndex = (currentIndex - 1 + (slideCount - visibleCount + 1)) % (slideCount - visibleCount + 1);
-        goToSlide(currentIndex);
-      }
-      function startAuto() { intervalId = setInterval(nextSlide, 5000); }
-      function stopAuto() { clearInterval(intervalId); }
-      // Botões manuais
-      carousel.querySelector('.prev').addEventListener('click', () => { prevSlide(); stopAuto(); });
-      carousel.querySelector('.next').addEventListener('click', () => { nextSlide(); stopAuto(); });
-      // Inicia autoplay
-      startAuto();
-      // Pausa no hover
-      carousel.addEventListener('mouseenter', stopAuto);
-      carousel.addEventListener('mouseleave', startAuto);
+      const count = slides.children.length, visible = 3; let index = 0, intervalId;
+      const goTo = i => slides.style.transform = `translateX(-${(100/visible)*i}%)`;
+      const nextSlide = () => { index = (index+1)%(count-visible+1); goTo(index); };
+      const prevSlide = () => { index = (index-1+count-visible+1)%(count-visible+1); goTo(index); };
+      carousel.querySelector('.prev').addEventListener('click', () => { prevSlide(); clearInterval(intervalId); });
+      carousel.querySelector('.next').addEventListener('click', () => { nextSlide(); clearInterval(intervalId); });
+      carousel.addEventListener('mouseenter', () => clearInterval(intervalId));
+      carousel.addEventListener('mouseleave', () => intervalId = setInterval(nextSlide, 5000));
+      intervalId = setInterval(nextSlide, 5000);
     });
   </script>
 </body>
