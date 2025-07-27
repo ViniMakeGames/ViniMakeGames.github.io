@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Your Name - Game Programmer Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vinícius Alves de Oliveira – Game Programmer Portfolio</title>
   <style>
-    /* Reset and Base Styles */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body { font-family: Arial, sans-serif; line-height: 1.6; }
@@ -15,12 +14,27 @@
     nav ul { list-style: none; display: flex; gap: 1rem; }
     nav a { color: #333; text-decoration: none; transition: color 0.3s; }
     nav a:hover { color: #007bff; }
+    section { padding: 70px 20px; max-width: 1200px; margin: auto; }
+    #home { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; height: 40vh; padding-left: 20px; }
+    #home h1 { font-size: 3rem; text-align: left; width: 100%; }
+    .typing-line {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  font-weight: 500;
+  color: #333;
+  text-align: left;
+  width: 100%;
+}
+    .cursor {
+      display: inline-block;
+      animation: blink 1s step-end infinite;
+      font-weight: bold;
+      color: #333;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
 
-    section { padding: 100px 20px; max-width: 1200px; margin: auto; }
-    #home { display: flex; align-items: center; justify-content: center; height: 100vh; background: #f5f5f5; }
-    #home h1 { font-size: 3rem; }
-
-    /* Card Styles */
     .card { background: #fff; border: 1px solid #eaeaea; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
     .thumbnail { width: 100%; height: 200px; object-fit: cover; background: #ddd; }
     .card-content { padding: 1rem; }
@@ -28,7 +42,6 @@
     .card-content p { font-size: 0.9rem; color: #666; margin: 0.25rem 0; }
     .card-content a { display: inline-block; margin-top: 0.5rem; color: #007bff; text-decoration: none; }
 
-    /* Slider Styles */
     .carousel { position: relative; overflow: hidden; }
     .slides { display: flex; transition: transform 0.5s ease-in-out; }
     .slide { min-width: 33.333%; box-sizing: border-box; padding: 0 10px; }
@@ -37,7 +50,6 @@
     .carousel-button.prev { left: 10px; }
     .carousel-button.next { right: 10px; }
 
-    /* About & Social */
     #about { display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; background: #fafafa; }
     .avatar { width: 150px; height: 150px; border-radius: 50%; background: #ddd; }
     .bio { flex: 1; }
@@ -51,7 +63,7 @@
 <body>
   <header>
     <nav>
-      <div class="logo">Your Name</div>
+      <div class="logo">Vinícius Alves de Oliveira</div>
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#games">Games</a></li>
@@ -64,7 +76,8 @@
   </header>
   <main>
     <section id="home">
-      <h1>Hello, I'm [Your Name]</h1>
+      <h1>Hi, I'm Vini</h1>
+      <div class="typing-line">I'm a <span id="typed-text"></span><span class="cursor">|</span></div>
     </section>
     <section id="games">
       <h2>Games</h2>
@@ -91,9 +104,9 @@
       </div>
     </section>
     <section id="about">
-      <div class="avatar"></div>
+      <div class="avatar"><img src="img/me.jpg" alt="Vinícius Alves de Oliveira" style="width:100%; height:100%; object-fit:cover; border-radius:50%;"></div>
       <div class="bio">
-        <p>I'm [Your Name], a game programmer experienced in C#, Unreal Engine, and Blender. Passionate about crafting interactive experiences and stunning visuals.</p>
+        <p>I'm Vinícius Alves de Oliveira, a game developer experienced in C#, Unity Engine, and Blender. Passionate about crafting interactive experiences and stunning visuals.</p>
       </div>
     </section>
     <section id="contact">
@@ -107,12 +120,11 @@
         <a class="social-button" href="#"><img src="icons/github.png" alt="GitHub" class="social-icon"></a>
       </div>
     </section>
-  </main>
+  $1
   <footer>
-    © 2025 Your Name. All rights reserved.
+    © 2025 Vinícius Alves de Oliveira. All rights reserved.
   </footer>
   <script>
-    // Smooth scroll fallback
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -120,91 +132,57 @@
       });
     });
 
-    // Dynamic data arrays
     const gamesData = [
-      { name: 'Rune Legacy Idle', link: 'https://store.steampowered.com/app/3098820/Rune_Legacy_Idle/', img: 'screenshots/runelegacy_banner.jpg', gif: 'screenshots/runelegacy_banner.gif', engine: 'Unity', platforms: 'Steam, Android, iOS' },
-      { name: 'Dananeer', link: 'https://play.google.com/store/apps/details?id=com.dananeer.dananeerpro&hl=pt_BR', img: 'screenshots/dananeer_banner.png', gif: 'screenshots/dananeer_banner.gif', engine: 'Unity', platforms: 'Android, iOS' },
-      { name: 'Slime Dungeon', link: 'https://palloma.itch.io/slime-dungeon', img: 'screenshots/slimedungeon_banner.png', gif: 'screenshots/slimedungeon_banner.gif', engine: 'Unity', platforms: 'itch.io' },
-      { name: 'Game 4', link: '#', img: 'images/game4.jpg', gif: 'images/game4.gif', engine: 'Unity' }
-    ];
-
+  { name: 'Rune Legacy Idle', link: 'https://store.steampowered.com/app/3098820/Rune_Legacy_Idle/', img: 'screenshots/runelegacy_banner.jpg', gif: 'screenshots/runelegacy_banner.gif', engine: 'Unity', platforms: 'Steam, Android, iOS' },
+  { name: 'Dananeer', link: 'https://play.google.com/store/apps/details?id=com.dananeer.dananeerpro&hl=pt_BR', img: 'screenshots/dananeer_banner.png', gif: 'screenshots/dananeer_banner.gif', engine: 'Unity', platforms: 'Android, iOS' },
+  { name: 'Slime Dungeon', link: 'https://palloma.itch.io/slime-dungeon', img: 'screenshots/slimedungeon_banner.png', gif: 'screenshots/slimedungeon_banner.gif', engine: 'Unity', platforms: 'itch.io' },
+  //{ name: 'Game 4', link: '#', img: 'images/game4.jpg', gif: 'images/game4.gif', engine: 'Unity' }
+];
     const modelsData = [
-      {
-        name: 'Cult of the Lamb',
-        link: 'https://sketchfab.com/3d-models/cult-of-the-lamb-ea3e0f5371c741d088499b2c3c00029a',
-        embedHtml: `
-          <div class="sketchfab-embed-wrapper">
-            <iframe title="Cult of the Lamb" frameborder="0" allowfullscreen mozallowfullscreen webkitallowfullscreen allow="autoplay; fullscreen; xr-spatial-tracking" src="https://sketchfab.com/models/ea3e0f5371c741d088499b2c3c00029a/embed"></iframe>
-            <p style="font-size:13px; font-weight:normal; margin:5px; color:#4A4A4A;">
-              <a href="https://sketchfab.com/3d-models/cult-of-the-lamb-ea3e0f5371c741d088499b2c3c00029a" target="_blank" rel="nofollow" style="font-weight:bold; color:#1CAAD9;">Cult of the Lamb</a>
-              by
-              <a href="https://sketchfab.com/vinimakegames" target="_blank" rel="nofollow" style="font-weight:bold; color:#1CAAD9;">vinimakegames</a>
-              on
-              <a href="https://sketchfab.com" target="_blank" rel="nofollow" style="font-weight:bold; color:#1CAAD9;">Sketchfab</a>
-            </p>
-          </div>
-        `
-      },
-      {
-        name: 'Shade',
-        link: 'https://sketchfab.com/3d-models/shade-8d31bfb79a9e41fb886dbc8961cbc1a0',
-        embedHtml: `
-          <div class="sketchfab-embed-wrapper">
-            <iframe title="Shade" frameborder="0" allowfullscreen mozallowfullscreen webkitallowfullscreen allow="autoplay; fullscreen; xr-spatial-tracking" src="https://sketchfab.com/models/8d31bfb79a9e41fb886dbc8961cbc1a0/embed"></iframe>
-            <p style="font-size:13px; font-weight:normal; margin:5px; color:#4A4A4A;">
-              <a href="https://sketchfab.com/3d-models/shade-8d31bfb79a9e41fb886dbc8961cbc1a0" target="_blank" rel="nofollow" style="font-weight:bold; color:#1CAAD9;">Shade</a>
-              by
-              <a href="https://sketchfab.com/vinimakegames" target="_blank" rel="nofollow" style="font-weight:bold; color:#1CAAD9;">vinimakegames</a>
-              on
-              <a href="https://sketchfab.com" target="_blank" rel="nofollow" style="font-weight:bold; color:#1CAAD9;">Sketchfab</a>
-            </p>
-          </div>
-        `
-      },
-      {
-        name: 'The Legend of Pipi Fanart',
-        link: 'https://sketchfab.com/3d-models/the-legend-of-pipi-fanart-75a131275fb44e7aa21556ee4fe7cee0',
-        embedHtml: `
-          <div class="sketchfab-embed-wrapper">
-            <iframe title="The Legend of Pipi Fanart" frameborder="0" allowfullscreen mozallowfullscreen webkitallowfullscreen allow="autoplay; fullscreen; xr-spatial-tracking" src="https://sketchfab.com/models/75a131275fb44e7aa21556ee4fe7cee0/embed"></iframe>
-            <p style="font-size:13px; font-weight:normal; margin:5px; color:#4A4A4A;">
-              <a href="https://sketchfab.com/3d-models/the-legend-of-pipi-fanart-75a131275fb44e7aa21556ee4fe7cee0?utm_medium=embed&utm_campaign=share-popup&utm_content=75a131275fb44e7aa21556ee4fe7cee0" target="_blank" rel="nofollow" style="font-weight:bold; color:#1CAAD9;">The Legend of Pipi Fanart</a>
-              by
-              <a href="https://sketchfab.com/vinimakegames?utm_medium=embed&utm_campaign=share-popup&utm_content=75a131275fb44e7aa21556ee4fe7cee0" target="_blank" rel="nofollow" style="font-weight:bold; color:#1CAAD9;">vinimakegames</a>
-              on
-              <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=75a131275fb44e7aa21556ee4fe7cee0" target="_blank" rel="nofollow" style="font-weight:bold; color:#1CAAD9;">Sketchfab</a>
-            </p>
-          </div>
-        `
-      },
-      {
-        name: 'Sci-fi Helmet',
-        link: 'https://sketchfab.com/3d-models/sci-fi-helmet',
-        embedHtml: null
-      },
-      {
-        name: 'Wooden Crate',
-        link: 'https://sketchfab.com/3d-models/wooden-crate',
-        embedHtml: null
-      },
-      {
-        name: 'Modular Building',
-        link: 'https://sketchfab.com/3d-models/modular-building',
-        embedHtml: null
-      }
-    ];
-
+  {
+    name: 'Cult of the Lamb',
+    link: 'https://sketchfab.com/3d-models/cult-of-the-lamb-ea3e0f5371c741d088499b2c3c00029a',
+    embedHtml: `<div class="sketchfab-embed-wrapper">
+      <iframe title="Cult of the Lamb" frameborder="0" allowfullscreen mozallowfullscreen webkitallowfullscreen allow="autoplay; fullscreen; xr-spatial-tracking" src="https://sketchfab.com/models/ea3e0f5371c741d088499b2c3c00029a/embed"></iframe>
+      <p style="font-size:13px; font-weight:normal; margin:5px; color:#4A4A4A;">
+        <a href="https://sketchfab.com/3d-models/cult-of-the-lamb-ea3e0f5371c741d088499b2c3c00029a" target="_blank" rel="nofollow" style="font-weight:bold; color:#1CAAD9;">Cult of the Lamb</a> by <a href="https://sketchfab.com/vinimakegames" target="_blank" rel="nofollow" style="font-weight:bold; color:#1CAAD9;">vinimakegames</a> on <a href="https://sketchfab.com" target="_blank" rel="nofollow" style="font-weight:bold; color:#1CAAD9;">Sketchfab</a>
+      </p>
+    </div>`
+  },
+  {
+    name: 'Shade',
+    link: 'https://sketchfab.com/3d-models/shade-8d31bfb79a9e41fb886dbc8961cbc1a0',
+    embedHtml: `<div class="sketchfab-embed-wrapper">
+      <iframe title="Shade" frameborder="0" allowfullscreen mozallowfullscreen webkitallowfullscreen allow="autoplay; fullscreen; xr-spatial-tracking" src="https://sketchfab.com/models/8d31bfb79a9e41fb886dbc8961cbc1a0/embed"></iframe>
+      <p style="font-size:13px; font-weight:normal; margin:5px; color:#4A4A4A;">
+        <a href="https://sketchfab.com/3d-models/shade-8d31bfb79a9e41fb886dbc8961cbc1a0" target="_blank" rel="nofollow" style="font-weight:bold; color:#1CAAD9;">Shade</a> by <a href="https://sketchfab.com/vinimakegames" target="_blank" rel="nofollow" style="font-weight:bold; color:#1CAAD9;">vinimakegames</a> on <a href="https://sketchfab.com" target="_blank" rel="nofollow" style="font-weight:bold; color:#1CAAD9;">Sketchfab</a>
+      </p>
+    </div>`
+  },
+  {
+    name: 'The Legend of Pipi Fanart',
+    link: 'https://sketchfab.com/3d-models/the-legend-of-pipi-fanart-75a131275fb44e7aa21556ee4fe7cee0',
+    embedHtml: `<div class="sketchfab-embed-wrapper">
+      <iframe title="The Legend of Pipi Fanart" frameborder="0" allowfullscreen mozallowfullscreen webkitallowfullscreen allow="autoplay; fullscreen; xr-spatial-tracking" src="https://sketchfab.com/models/75a131275fb44e7aa21556ee4fe7cee0/embed"></iframe>
+      <p style="font-size:13px; font-weight:normal; margin:5px; color:#4A4A4A;">
+        <a href="https://sketchfab.com/3d-models/the-legend-of-pipi-fanart-75a131275fb44e7aa21556ee4fe7cee0" target="_blank" rel="nofollow" style="font-weight:bold; color:#1CAAD9;">The Legend of Pipi Fanart</a> by <a href="https://sketchfab.com/vinimakegames" target="_blank" rel="nofollow" style="font-weight:bold; color:#1CAAD9;">vinimakegames</a> on <a href="https://sketchfab.com" target="_blank" rel="nofollow" style="font-weight:bold; color:#1CAAD9;">Sketchfab</a>
+      </p>
+    </div>`
+  },
+  //{ name: 'Sci-fi Helmet', link: 'https://sketchfab.com/3d-models/sci-fi-helmet', embedHtml: null },
+  //{ name: 'Wooden Crate', link: 'https://sketchfab.com/3d-models/wooden-crate', embedHtml: null },
+  //{ name: 'Modular Building', link: 'https://sketchfab.com/3d-models/modular-building', embedHtml: null }
+];
     const techArtData = [
-      { name: 'Fire Shader', link: 'videos/fire-shader.mp4', img: 'videos/fire-shader-thumb.jpg', gif: 'videos/fire-shader.gif' },
-      { name: 'Water Shader', link: 'videos/water-shader.mp4', img: 'videos/water-shader-thumb.jpg', gif: 'videos/water-shader.gif' },
-      { name: 'Particle VFX', link: 'videos/particle-vfx.mp4', img: 'videos/particle-vfx-thumb.jpg', gif: 'videos/particle-vfx.gif' }
-    ];
+  //{ name: 'Fire Shader', link: 'videos/fire-shader.mp4', img: 'videos/fire-shader-thumb.jpg', gif: 'videos/fire-shader.gif' },
+  //{ name: 'Water Shader', link: 'videos/water-shader.mp4', img: 'videos/water-shader-thumb.jpg', gif: 'videos/water-shader.gif' },
+  //{ name: 'Particle VFX', link: 'videos/particle-vfx.mp4', img: 'videos/particle-vfx-thumb.jpg', gif: 'videos/particle-vfx.gif' }
+];
 
     function populateCarousel(id, data) {
       const slides = document.getElementById(id).querySelector('.slides');
       data.forEach(item => {
-        const slide = document.createElement('div');
-        slide.className = 'slide';
+        const slide = document.createElement('div'); slide.className = 'slide';
         if (id === 'models-carousel' && item.embedHtml) {
           slide.innerHTML = `<div class="card">${item.embedHtml}</div>`;
         } else {
@@ -220,8 +198,10 @@
             </div>
           `;
           const imgElem = slide.querySelector('img.thumbnail');
-          imgElem.addEventListener('mouseenter', () => imgElem.src = imgElem.dataset.gif);
-          imgElem.addEventListener('mouseleave', () => imgElem.src = imgElem.dataset.img);
+          if (imgElem.dataset.gif) {
+            imgElem.addEventListener('mouseenter', () => imgElem.src = imgElem.dataset.gif);
+            imgElem.addEventListener('mouseleave', () => imgElem.src = imgElem.dataset.img);
+          }
         }
         slides.appendChild(slide);
       });
@@ -233,8 +213,7 @@
     });
 
     document.querySelectorAll('.carousel').forEach(carousel => {
-      const slides = carousel.querySelector('.slides');
-      const count = slides.children.length, visible = 3; let index = 0, intervalId;
+      const slides = carousel.querySelector('.slides'); const count = slides.children.length, visible = 3; let index = 0, intervalId;
       const goTo = i => slides.style.transform = `translateX(-${(100/visible)*i}%)`;
       const nextSlide = () => { index = (index+1)%(count-visible+1); goTo(index); };
       const prevSlide = () => { index = (index-1+count-visible+1)%(count-visible+1); goTo(index); };
@@ -244,6 +223,38 @@
       carousel.addEventListener('mouseleave', () => intervalId = setInterval(nextSlide, 5000));
       intervalId = setInterval(nextSlide, 5000);
     });
+
+    // Typing effect
+    const typedTextElement = document.getElementById('typed-text');
+    const typingData = [
+  { text: '👾 Game Developer', color: '#e63946' },
+  { text: '🧊 3D Artist', color: '#1d3557' },
+  { text: '✨ Tech Artist', color: '#457b9d' },
+  { text: '🧩 Game Designer', color: '#ff9900' },
+  { text: '🟪 Pixel Artist', color: '#8e44ad' },
+  { text: '🐉 Dungeon Master', color: '#2c3e50' },
+  { text: '🎮 Gamer', color: '#27ae60' }
+];
+    let currentIndex = 0, isDeleting = false, charIndex = 0;
+    function typeEffect() {
+      const { text, color } = typingData[currentIndex];
+      const currentText = text.substring(0, charIndex);
+      typedTextElement.innerHTML = `<span style="color:${color}">${currentText}</span>`;
+      if (!isDeleting && charIndex < text.length) {
+        charIndex++;
+        setTimeout(typeEffect, 100);
+      } else if (!isDeleting && charIndex === text.length) {
+        setTimeout(() => { isDeleting = true; typeEffect(); }, 2000);
+      } else if (isDeleting && charIndex > 0) {
+        charIndex--;
+        setTimeout(typeEffect, 50);
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        currentIndex = (currentIndex + 1) % typingData.length;
+        setTimeout(typeEffect, 500);
+      }
+    }
+    typeEffect();
   </script>
 </body>
 </html>
