@@ -92,7 +92,7 @@
         <li><a href="index.html#techart">Tech Art</a></li>
         <li><a href="index.html#about">About</a></li>
         <li><a href="index.html#contact">Contact</a></li>
-        <li><a href="curriculum.html">Curriculum</a></li>
+        <li><a href="resume.html">Resume</a></li>
       </ul>
     </nav>
   </header>
@@ -128,7 +128,7 @@
     <section id="about">
       <div class="avatar"><img src="img/me.jpg" alt="Vinícius Alves de Oliveira" style="width:100%; height:100%; object-fit:cover; border-radius:50%;"></div>
       <div class="bio">
-        <p>I'm Vinícius Alves de Oliveira, a game developer experienced in C#, Unity Engine, and Blender. Passionate about crafting interactive experiences and stunning visuals.</p>
+        <p>I'm Vinícius Alves, a game developer experienced in C#, Unity Engine, and Blender. Passionate about crafting interactive experiences and stunning visuals.</p>
       </div>
     </section>
     <section id="contact">
@@ -232,7 +232,11 @@
       const dataMap = { 'games-carousel': gamesData, 'models-carousel': modelsData, 'techart-carousel': techArtData };
       populateCarousel(id, dataMap[id]);
     });
-
+    let visible = 3
+    window.addEventListener('resize', ()=>{
+  visible = window.innerWidth < 768 ? 1 : 3;
+  goTo(index);
+});
     document.querySelectorAll('.carousel').forEach(carousel => {
       const slides = carousel.querySelector('.slides'); const count = slides.children.length, visible = window.innerWidth < 768 ? 1 : 3; let index = 0, intervalId;
       const goTo = i => slides.style.transform = `translateX(-${(100/visible)*i}%)`;
