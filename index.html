@@ -5,14 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vinícius Alves de Oliveira – Game Programmer Portfolio</title>
   <style>
+    /* Reset and Base Styles */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body { font-family: Arial, sans-serif; line-height: 1.6; }
     header { position: fixed; top: 0; width: 100%; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1); z-index: 1000; }
-    nav { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem; }
+    nav { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem; position: relative; }
     nav .logo { font-weight: bold; font-size: 1.25rem; }
+    .hamburger { display: none; flex-direction: column; cursor: pointer; }
+    .hamburger span { width: 25px; height: 3px; background: #333; margin: 4px 0; transition: 0.3s; }
     nav ul { list-style: none; display: flex; gap: 1rem; }
-    nav a { color: #333; text-decoration: none; transition: color 0.3s; }
+    nav ul.open { display: flex; }
+    nav a { color: #333; text-decoration: none; transition: color 0.3s; font-size: 1rem; }
     nav a:hover { color: #007bff; }
     section { padding: 70px 20px; max-width: 1200px; margin: auto; }
     #home { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; height: 40vh; padding-left: 20px; }
@@ -58,19 +62,37 @@
     .social-button { display: inline-block; }
     .social-icon { width: 64px; height: 64px; }
     footer { text-align: center; padding: 1rem 0; background: #f5f5f5; margin-top: 2rem; }
+
+    /* Responsive for Mobile */
+    @media (max-width: 768px) {
+      nav { flex-direction: column; padding: 0.5rem; }
+      .hamburger { display: flex; }
+      nav ul { flex-direction: column; gap: 0.5rem; display: none; width: 100%; background: #fff; position: absolute; top: 100%; left: 0; padding: 1rem 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+      nav ul.open { display: flex; }
+      main { padding-top: 60px; }
+      .viewer { height: calc(100vh - 60px); }
+      .slide { min-width: 100%; box-sizing: border-box; padding: 0 10px; }
+    }
+
   </style>
 </head>
 <body>
   <header>
     <nav>
       <div class="logo">Vinícius Alves de Oliveira</div>
+      <div class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('open')">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#games">Games</a></li>
-        <li><a href="#models">3D Models</a></li>
-        <li><a href="#techart">Tech Art</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#games">Games</a></li>
+        <li><a href="index.html#models">3D Models</a></li>
+        <li><a href="index.html#techart">Tech Art</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="curriculum.html">Curriculum</a></li>
       </ul>
     </nav>
   </header>
@@ -120,7 +142,6 @@
         <a class="social-button" href="#"><img src="icons/github.png" alt="GitHub" class="social-icon"></a>
       </div>
     </section>
-  $1
   <footer>
     © 2025 Vinícius Alves de Oliveira. All rights reserved.
   </footer>
@@ -213,7 +234,7 @@
     });
 
     document.querySelectorAll('.carousel').forEach(carousel => {
-      const slides = carousel.querySelector('.slides'); const count = slides.children.length, visible = 3; let index = 0, intervalId;
+      const slides = carousel.querySelector('.slides'); const count = slides.children.length, visible = window.innerWidth < 768 ? 1 : 3; let index = 0, intervalId;
       const goTo = i => slides.style.transform = `translateX(-${(100/visible)*i}%)`;
       const nextSlide = () => { index = (index+1)%(count-visible+1); goTo(index); };
       const prevSlide = () => { index = (index-1+count-visible+1)%(count-visible+1); goTo(index); };
